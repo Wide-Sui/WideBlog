@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="head(title)">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:replace="${title}"></title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css">
+    <link rel="stylesheet" href="../static/css/me.css" th:href="@{/css/me.css}">
+    <link rel="stylesheet" href="../static/css/typo.css" th:href="@{/css/typo.css}">
+
+    <link rel="stylesheet" href="../static/css/animate.css" th:href="@{/css/animate.css}">
+    <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
+    <link rel="stylesheet" href="../static/lib/tocbot/tocbot.css" th:href="@{/lib/tocbot/tocbot.css}">
+
+    <!--轮播-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+
+
+<body>
+    <!--导航-->
+    <nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <div class="middle aligned item" style="height: 60px;">
+                    <img src="../static/images/webset/myBlog2.png" th:src="@{/images/webset/myBlog2.png}" style="width: auto; height: 60px">
+                </div>
+
+                <div class="middle aligned item m-padded-lr-large m-padded-tb-tine m-mobile-hide m-item" style="height: 60px;">
+                    <a href="#" th:href="@{/index}" class="active m-item item m-mobile-hide m-padded-lr-tine m-padded-tb-tine" th:if="${n==1}">
+                        <img class="ui image" src="../static/images/title/home1.ico" th:src="@{/images/title/home1.png}" style="width: auto; height: 55px">
+                    </a>
+                    <a href="#" th:href="@{/index}" class="m-item item m-mobile-hide m-padded-lr-tine m-padded-tb-tine" th:if="${n!=1}">
+                        <img class="ui image" src="../static/images/title/home2.ico" th:src="@{/images/title/home2.png}" style="width: auto; height: 50px">
+                    </a>
+                </div>
+
+                <div class="middle aligned item m-padded-lr-large m-padded-tb-tine m-mobile-hide m-item" style="height: 60px;">
+                    <a href="#" th:href="@{/types/-1}" class="active m-item item m-mobile-hide m-padded-lr-tine m-padded-tb-tine" th:if="${n==2}">
+                        <img class="ui image" src="../static/images/title/type1.ico" th:src="@{/images/title/type1.png}" style="width: auto; height: 55px">
+                    </a>
+                    <a href="#" th:href="@{/types/-1}" class="m-item item m-mobile-hide m-padded-lr-tine m-padded-tb-tine" th:if="${n!=2}">
+                        <img class="ui image" src="../static/images/title/type2.ico" th:src="@{/images/title/type2.png}" style="width: auto; height: 50px">
+                    </a>
+                </div>
+
+                <div class="middle aligned item m-padded-lr-large m-padded-tb-tine m-mobile-hide m-item" style="height: 60px;">
+                    <a href="#" th:href="@{/tags/-1}" class="active m-item item m-mobile-hide m-padded-lr-tine m-padded-tb-tine" th:if="${n==3}">
+                        <img class="ui image" src="../static/images/title/tag1.ico" th:src="@{/images/title/tag1.png}" style="width: auto; height: 55px">
+                    </a>
+                    <a href="#" th:href="@{/tags/-1}" class=" m-item item m-mobile-hide m-padded-lr-tine m-padded-tb-tine" th:if="${n!=3}">
+                        <img class="ui image" src="../static/images/title/tag2.ico" th:src="@{/images/title/tag2.png}" style="width: auto; height: 50px">
+                    </a>
+                </div>
+
+                <div class="middle aligned item m-padded-lr-large m-padded-tb-tine m-mobile-hide m-item" style="height: 60px;">
+                    <a href="#" th:href="@{/archives}" class="active m-item item m-mobile-hide m-padded-lr-tine m-padded-tb-tine" th:if="${n==4}">
+                        <img class="ui image" src="../static/images/title/archive1.ico" th:src="@{/images/title/archive1.png}" style="width: auto; height: 55px">
+                    </a>
+                    <a href="#" th:href="@{/archives}" class=" m-item item m-mobile-hide m-padded-lr-tine m-padded-tb-tine" th:if="${n!=4}">
+                        <img class="ui image" src="../static/images/title/archive2.ico" th:src="@{/images/title/archive2.png}" style="width: auto; height: 50px">
+                    </a>
+                </div>
+
+                <div class="middle aligned item m-padded-lr-large m-padded-tb-tine m-mobile-hide m-item" style="height: 60px;">
+                    <a href="#" th:href="@{/aboutMe}" class="active m-item item m-mobile-hide m-padded-lr-tine m-padded-tb-tine" th:if="${n==5}">
+                        <img class="ui image" src="../static/images/title/me1.ico" th:src="@{/images/title/me1.png}" style="width: auto; height: 55px">
+                    </a>
+                    <a href="#" th:href="@{/aboutMe}" class=" m-item item m-mobile-hide m-padded-lr-tine m-padded-tb-tine" th:if="${n!=5}">
+                        <img class="ui image" src="../static/images/title/me2.ico" th:src="@{/images/title/me2.png}" style="width: auto; height: 50px">
+                    </a>
+                </div>
+
+<!--                <div class="right m-item item m-mobile-hide">-->
+<!--                    <form name="search" action="#" th:action="@{/search}" method="post" target="_blank">-->
+<!--                        <div class="ui icon inverted transparent input m-margin-tb-tiny">-->
+<!--                            <input type="text" name="query" placeholder="输入要查找的内容" th:value="${query}">-->
+<!--                            <i onclick="document.forms['search'].submit()" class="search link icon"></i>-->
+<!--                        </div>-->
+<!--                    </form>-->
+<!--                </div>-->
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+    <!--底部-->
+    <footer th:fragment="footer" id="falldownfooter" class="ui inverted vertical segment ">
+        <div style="text-align: center;" >
+            <img src="../static/images/webset/myBlog.png" th:src="@{/images/webset/myBlog.png}" style="width: 180px;">
+        </div>
+        <div class="ui center aligned container m-padded-tb">
+            <div class="ui inverted divided stackable grid">
+                <div class="five wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item m-text-thin">QQ：820273346</a>
+                        <a href="#" class="item m-text-thin">Weibo：@WIDESUI</a>
+                        <a href="mailto:swk@pku.edu.cn" class="item m-text-thin">Email：swk@pku.edu.cn</a>
+                    </div>
+
+                </div>
+                <div class="six wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced" >技术支持</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" target="_blank" th:href="@{https://cloud.tencent.com/}" class="item m-text-thin">腾讯云存储</a>
+                        <a href="#" target="_blank" th:href="@{https://cloud.tencent.com/}" class="item m-text-thin">腾讯云服务器</a>
+                        <a href="#" target="_blank" th:href="@{https://github.com/Molunerfinn/PicGo/}" class="item m-text-thin">PicGo图片管理</a>
+                    </div>
+                </div>
+                <div class="five wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">说明</h4>
+                    <div class="ui inverted link list">
+                        <a class="item m-text-thin">分享学习的个人博客</a>
+                        <a class="item m-text-thin">逐步完善中，欢迎提交bug</a>
+                        <a class="item m-text-thin">Copyright ©  2020-2020  Designed by Wide</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <th:block th:fragment="script">
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/components/transition.min.css"></script>
+        <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
+
+        <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
+        <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
+        <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
+        <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{lib/waypoints/jquery.waypoints.min.js}"></script>
+
+        <script src="https://unpkg.com/swiper/swiper-bundle.js"> </script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+    </th:block>
+</body>
+</html>

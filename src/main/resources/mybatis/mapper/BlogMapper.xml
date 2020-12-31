@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wide.mapper.BlogMapper">
+
+
+    <resultMap id="BlogMap" type="com.wide.bean.Blog">
+        <id column="id" property="id"/>
+        <result column="appreciation" property="appreciation"/>
+        <result column="commentabled" property="commentabled"/>
+        <result column="content" property="content"/>
+        <result column="create_time" property="createTime"/>
+        <result column="first_picture" property="firstPicture"/>
+        <result column="flag" property="flag"/>
+        <result column="published" property="published"/>
+        <result column="recommend" property="recommend"/>
+        <result column="share_statement" property="shareStatement"/>
+        <result column="title" property="title"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="views" property="views"/>
+        <result column="type_id" property="typeId"/>
+        <result column="user_id" property="userId"/>
+        <result column="tagIds" property="tagIds"/>
+        <result column="description" property="description"/>
+<!--        <result column="name" property="typeName"/>-->
+<!--        <result column="nickname" property="nickname"/>-->
+<!--        <result column="avatar" property="avatar"/>-->
+        <association column="type_id" property="type" javaType="com.wide.bean.Type" select="getTypeById">
+            <result column="id" property="id"/>
+            <result column="name" property="name"/>
+        </association>
+        <association column="user_id" property="user" javaType="com.wide.bean.User" select="getUserById">
+            <result column="id" property="id"/>
+            <result column="avatar" property="avatar"/>
+            <result column="email" property="email"/>
+            <result column="nickname" property="nickname"/>
+            <result column="type" property="type"/>
+            <result column="username" property="username"/>
+        </association>
+        <collection column="id" property="comments" ofType="com.wide.bean.Comment" select="getCommentsByBlogId"/>
+        <collection column="id" property="tags" ofType="com.wide.bean.Tag" select="getTagsByBlogId"/>
+    </resultMap>
+
+    <select id="getTypeById" resultType="com.wide.bean.Type">
+        select id, name
+        from t_type
+        where id = #{type_id};
+    </select>
+
+    <select id="getUserById" resultType="com.wide.bean.User">
+        select id, avatar, email, nickname, type, username
+        from t_user;
+    </select>
+
+    <select id="getCommentsByBlogId" resultType="com.wide.bean.Comment">
+        select *
+        from t_comment
+        where blog_id = #{id}
+    </select>
+
+    <select id="getTagsByBlogId" resultType="com.wide.bean.Tag">
+        select t.*
+        from t_tag t, t_blog_tags bt
+        where t.id = bt.tags_id and bt.blogs_id = #{id}
+    </select>
+
+    <!--    public Blog getBlog(Long id);-->
+    <select id="getBlog" resultMap="BlogMap">
+        select * from t_blog where id = #{id}
+    </select>
+
+    <!--    public List<Blog> listBlog();-->
+    <select id="listBlog" parameterType="map" resultMap="BlogMap">
+--         select b.id, b.appreciation, b.commentabled, b.content, b.create_time, b.first_picture, b.flag, b.published, b.recommend, b.share_statement, b.title, b.update_time, b.views, b.type_id, b.user_id, b.tagIds, b.description,
+--         t.name, u.nickname, u.avatar
+--         from t_blog b, t_type t, t_user u
+--         where b.type_id = t.id and u.id = b.user_id
+        select *
+        from t_blog b
+        <where>
+            <if test="title != null">
+                and b.title like concat('%',#{title},'%')
+            </if>
+            <if test="typeId != null">
+                and b.type_id = #{typeId}
+            </if>
+            <if test="recommend != null">
+                and b.recommend = #{recommend}
+            </if>
+        </where>
+    </select>
+
+<!--    public List<Blog> listAllBlog();-->
+    <select id="listAllBlog" resultMap="BlogMap">
+            select * from t_blog;
+    </select>
+
+<!--    public List<Blog> listRecommendBlogTop(int num);-->
+    <select id="listRecommendBlogTop" resultMap="BlogMap">
+        select *
+        from t_blog
+        where recommend = true
+        order by create_time desc
+        limit #{num}
+    </select>
+
+<!--    public List<Blog> ListQueryBlog(String query);-->
+    <select id="listQueryBlog" parameterType="string" resultMap="BlogMap">
+        select *
+        from t_blog t
+        where t.published = true and (t.title like concat('%',#{query},'%') or t.content like concat('%',#{query},'%') or t.description like concat('%',#{query},'%'))
+    </select>
+
+<!--    public long saveBlog(@Param("blog") Blog blog);-->
+    <insert id="saveBlog" useGeneratedKeys="true" keyProperty="id" parameterType="com.wide.bean.Blog">
+        insert into t_blog (appreciation, commentabled, content, create_time, first_picture, flag, published, recommend, share_statement, title, update_time, views, type_id, user_id, description, tagIds)
+        values (#{blog.appreciation}, #{blog.commentabled}, #{blog.content}, #{blog.createTime}, #{blog.firstPicture}, #{blog.flag}, #{blog.published}, #{blog.recommend}, #{blog.shareStatement}, #{blog.title}, #{blog.updateTime}, #{blog.views}, #{blog.typeId}, #{blog.userId}, #{blog.description}, #{blog.tagIds})
+    </insert>
+
+<!--    public int updateBlog(@Param("id") Long id, @Param("blog") Blog blog);-->
+    <update id="updateBlog">
+        update t_blog
+        set appreciation = #{blog.appreciation}, commentabled =#{blog.commentabled}, content = #{blog.content}, first_picture = #{blog.firstPicture}, flag = #{blog.flag}, published = #{blog.published},recommend = #{blog.recommend},share_statement = #{blog.shareStatement},title = #{blog.title}, update_time = #{blog.updateTime}, type_id = #{blog.typeId}, user_id =  #{blog.userId}, description = #{blog.description}, tagIds = #{blog.tagIds}
+        where id = #{id}
+    </update>
+
+<!--    public void deleteBlog(Long id);-->
+    <delete id="deleteBlog">
+        delete from t_blog where id = #{id}
+    </delete>
+
+<!--    public int updateViews(Long id);-->
+    <update id="updateViews">
+        update t_blog set views = views + 1 where id = #{id}
+    </update>
+
+<!--    public List<Blog> listBlogByType(Long typeId);-->
+    <select id="listBlogByType" resultMap="BlogMap">
+        select *
+        from t_blog
+        where type_id = #{typeId}
+        order by create_time desc
+    </select>
+
+    <!--    public List<Blog> listBlogByTag(Long tagId);-->
+    <select id="listBlogByTag" resultMap="BlogMap">
+        select *
+        from t_blog b, t_blog_tags bt
+        where b.id = bt.blogs_id and bt.tags_id = #{tagId}
+        order by create_time desc
+    </select>
+
+<!--    public List<String> findGroupYear();-->
+    <select id="findGroupYear" resultType="string">
+        select date_format(b.create_time,'%Y') as year
+        from t_blog b
+        where b.published = true
+        group by date_format(b.create_time,'%Y')
+        order by year desc
+    </select>
+
+<!--    public List<Blog> findByYear(String year);-->
+    <select id="findByYear" resultMap="BlogMap">
+        select b.*
+        from t_blog b
+        where b.published = true and date_format(b.create_time,'%Y') = #{year}
+    </select>
+
+<!--    public Long countBlog();-->
+    <select id="countBlog" resultType="long">
+        select count(*)
+        from t_blog
+        where published = true
+    </select>
+
+<!--    public void deleteBlogType(Long typeId);-->
+    <update id="deleteBlogType">
+        update blogData.t_blog
+        set blogData.t_blog.type_id = null
+        where blogData.t_blog.type_id = #{typeId}
+    </update>
+
+<!--    public List<Blog> listAllSubmitBlog();-->
+    <select id="listAllSubmitBlog" resultMap="BlogMap">
+        select * from t_blog where published = true
+    </select>
+
+<!--    public List<Blog> listPartSubmitBlog(int start, int length);-->
+    <select id="listPartSubmitBlog" resultMap="BlogMap">
+        select *
+        from t_blog
+        where published = true
+        limit #{start}, #{length}
+    </select>
+</mapper>

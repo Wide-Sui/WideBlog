@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wide.mapper.BlogTagMapper">
+
+<!--    public void saveBlogTag(Long blogsId, Long tagsId);-->
+    <insert id="saveBlogTag">
+        insert into t_blog_tags (blogs_id, tags_id)
+        values (#{blogsId}, #{tagsId})
+    </insert>
+
+<!--    public void deleteOneTag(Long tagsId);-->
+    <delete id="deleteOneTag">
+        delete from t_blog_tags where tags_id = #{tagsId}
+    </delete>
+
+<!--    public void deleteOneBlog(Long blogsId);-->
+    <delete id="deleteOneBlog">
+        delete from t_blog_tags where blogs_id = #{blogsId}
+    </delete>
+
+</mapper>

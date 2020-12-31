@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wide.mapper.CommentMapper">
+
+    <resultMap id="CommentMap" type="com.wide.bean.Comment">
+        <id column="id" property="id"/>
+        <result column="avatar" property="avatar"/>
+        <result column="admin_comment" property="adminComment"/>
+        <result column="content" property="content"/>
+        <result column="create_time" property="createTime"/>
+        <result column="email" property="email"/>
+        <result column="nickname" property="nickname"/>
+        <result column="blog_id" property="blogId"/>
+        <result column="parent_comment_id" property="parentCommentId"/>
+        <association column="blog_id" property="blog" javaType="com.wide.bean.Blog" select="getBlogById">
+            <result column="id" property="id"/>
+            <result column="appreciation" property="appreciation"/>
+            <result column="commentabled" property="commentabled"/>
+            <result column="content" property="content"/>
+            <result column="create_time" property="createTime"/>
+            <result column="first_picture" property="firstPicture"/>
+            <result column="flag" property="flag"/>
+            <result column="published" property="published"/>
+            <result column="recommend" property="recommend"/>
+            <result column="share_statement" property="shareStatement"/>
+            <result column="title" property="title"/>
+            <result column="update_time" property="updateTime"/>
+            <result column="views" property="views"/>
+            <result column="type_id" property="typeId"/>
+            <result column="user_id" property="userId"/>
+            <result column="tagIds" property="tagIds"/>
+            <result column="description" property="description"/>
+        </association>
+        <association column="parent_comment_id" property="parentComment" javaType="com.wide.bean.Comment" select="getCommentById2">
+            <result column="id" property="id"/>
+            <result column="avatar" property="avatar"/>
+            <result column="admin_comment" property="adminComment"/>
+            <result column="content" property="content"/>
+            <result column="create_time" property="createTime"/>
+            <result column="email" property="email"/>
+            <result column="nickname" property="nickname"/>
+            <result column="blog_id" property="blogId"/>
+            <result column="parent_comment_id" property="parentCommentId"/>
+        </association>
+        <collection column="id" property="replyComments" ofType="com.wide.bean.Comment" select="getCommentsByCommentId"/>
+    </resultMap>
+    <select id="getBlogById" resultType="com.wide.bean.Blog">
+        select *
+        from t_blog
+        where t_blog.id = #{blog_id}
+    </select>
+    <select id="getCommentById2" resultType="com.wide.bean.Comment">
+        select id, avatar, content, create_time, email, nickname
+        from t_comment
+        where id = #{parent_comment_id}
+    </select>
+    <select id="getCommentsByCommentId" resultType="com.wide.bean.Comment">
+        select *
+        from t_comment
+        where t_comment.parent_comment_id = #{id}
+    </select>
+
+    <!--    public List<Comment> listCommentByBlogId(Long blogId);-->
+    <select id="listCommentByBlogId" resultMap="CommentMap">
+        select *
+        from t_comment
+        where blog_id = #{blogId}
+    </select>
+
+<!--    public Comment getCommentById(Long id);-->
+    <select id="getCommentById" resultMap="CommentMap">
+        select *
+        from t_comment
+        where id = #{id}
+    </select>
+<!--    public Long saveComment(Comment comment);-->
+    <insert id="saveComment" useGeneratedKeys="true" keyProperty="id"  parameterType="com.wide.bean.Comment">
+        insert into t_comment (avatar, content, create_time, email, nickname, blog_id, parent_comment_id, admin_comment)
+        values (#{comment.avatar}, #{comment.content}, #{comment.createTime}, #{comment.email}, #{comment.nickname}, #{comment.blogId}, #{comment.parentCommentId}, #{comment.adminComment});
+    </insert>
+
+<!--    public void deleteCommentsByBlogId(Long blogId);-->
+    <delete id="deleteCommentsByBlogId">
+        delete from t_comment where blog_id = #{blogId}
+    </delete>
+</mapper>

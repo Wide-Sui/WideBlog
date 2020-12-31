@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragment :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>证书合集</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+    <!--轮播-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/3.4.2/css/swiper.min.css">
+</head>
+<body>
+    <!--导航-->
+    <nav th:replace="_fragment :: menu(5)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <div class="middle aligned item" style="width: 223px; height: 55px;">
+                    <img src="../static/images/webset/myBlog.png" th:src="@{/images/webset/myBlog.png}" style="width: 200px;">
+                </div>
+                <a href="#" class="m-item item m-mobile-hide"><i class="home icon large"></i>首页</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="dochub icon large"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="tags icon large"></i>标签</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="archive icon large"></i>归档</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="info circle icon large"></i>关于我</a>
+                <div class="right m-item item m-mobile-hide">
+                    <div class="ui icon inverted transparent input m-margin-tb-tiny">
+                        <input type="text" placeholder="请输入您要搜索的内容">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+    <!--中间内容-->
+    <div class="m-container-bigger m-padded-tb-big">
+        <div class="ui raised segments">
+            <!--学习类-->
+            <div class="ui top secondary attached segment">
+                <h3 class="ui header">
+                    <i class="check circle outline icon"></i>
+                    <div class="content">
+                        学习类
+                    </div>
+                </h3>
+            </div>
+            <div class="ui attached segment" style="text-align: center;">
+                <div class="ui middle aligned list">
+                    <div class="item m-margin-tb-small">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2016.11.30 国家奖学金.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2018.10 山东大学校长奖学金.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2016.12.01 优秀学生一等奖学金.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.12.01 优秀学生一等奖学金.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.12.01 优秀学生一等奖学金.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017年 泰豪奖学金.jpg}">
+                    </div>
+                </div>
+            </div>
+
+            <!--荣誉类-->
+            <div class="ui secondary attached segment">
+                <h3 class="ui header">
+                    <i class="check circle outline icon"></i>
+                    <div class="content">
+                        荣誉类
+                    </div>
+                </h3>
+            </div>
+            <div class="ui attached segment" style="text-align: center;">
+                <div class="ui middle aligned list">
+                    <div class="item m-margin-tb-small">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2018.04 山东省优秀学生.png}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2020.12 北京大学社会工作奖.png}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2016.12.01 校级优秀学生干部.jpg}">
+                        <img class="ui big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.12.01 校级学生干部.jpg}">
+                        <img class="ui big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2016.12.01 校级三好学生.jpg}">
+                        <img class="ui big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.12.01 校级三好学生.jpg}">
+                        <img class="ui big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2016.12 校百优大学生.jpg}">
+                        <img class="ui big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2018.04 校最美共青团员称号.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2016.11 校青马工程精英班优秀学员.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.12 榜样的力量班级之星.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2016.12.01 青春榜样机电先锋称号.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.12.01 青春榜样机电先锋称号.jpg}">
+                    </div>
+                </div>
+            </div>
+
+            <!--科研类-->
+            <div class="ui secondary attached segment">
+                <h3 class="ui header">
+                    <i class="check circle outline icon"></i>
+                    <div class="content">
+                        科研类
+                    </div>
+                </h3>
+            </div>
+            <div class="ui attached segment" style="text-align: center;">
+                <div class="ui middle aligned list">
+                    <div class="item m-margin-tb-small">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2018.03 美赛数学建模国际二等奖.png}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.10 全国大学生数学建模竞赛山东赛区一等奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2018.09 山东省创新创业大赛银奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.05 第八届山东省ACM程序设计竞赛优胜奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.2 亚太数学建模三等奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.04.08 第八届蓝桥杯省级三等奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2018.04 蓝桥杯.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.04.23 威海市第二届程序设计竞赛二等奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2018.07 校互联网金奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2018.03 完美校园大赛校级一等奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.07.15 校11届数学建模竞赛获三等奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.03.18 校ACM程序设计竞赛新星赛二等奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.03 第四届大学生程序设计竞赛校级二等奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2016.04 校大学生程序设计竞赛二等奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2016.03.12 校ACM程序设计竞赛新星赛三等奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2015.12 校ACM程序设计新星赛优胜奖.jpg}">
+                    </div>
+                </div>
+            </div>
+
+            <!--其他类-->
+            <div class="ui secondary attached segment">
+                <h3 class="ui header">
+                    <i class="check circle outline icon"></i>
+                    <div class="content">
+                        其他类
+                    </div>
+                </h3>
+            </div>
+            <div class="ui attached segment" style="text-align: center;">
+                <div class="ui middle aligned list">
+                    <div class="item m-margin-tb-small">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2016.05 健美操大赛一等奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2016.05 院辩论赛三等奖.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2015.10 军训优秀学员.jpg}">
+                    </div>
+                </div>
+            </div>
+
+            <!--其他类-->
+            <div class="ui secondary attached segment">
+                <h3 class="ui header">
+                    <i class="check circle outline icon"></i>
+                    <div class="content">
+                        任职证明
+                    </div>
+                </h3>
+            </div>
+            <div class="ui attached segment" style="text-align: center;">
+                <div class="ui middle aligned list">
+                    <div class="item m-margin-tb-small">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2018.06 校学生会任职证明.jpg}">
+                        <img class="ui  big aligned image"  src="../static/images/myself/lolIcon.png" th:src="@{https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/2017.10.10 院学生会任职证明.jpg}">
+
+                    </div>
+                </div>
+             </div>
+        </div>
+    </div>
+
+    <!--底部-->
+    <footer th:replace="_fragment :: footer" class="ui inverted vertical segment m-padded-t">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="four wide column">
+                    <div class="ui inverted link list">
+                        <!--                        <h4 class="ui inverted header m-text-thin m-text-spaced">我的微信</h4>-->
+                        <div class="item">
+                            <img src="../static/images/WeChat.jpeg" class="ui medium rounded image" alt="" style="width: 150px">
+                        </div>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced" >最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+                        <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+                        <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item m-text-thin">Email：swk@pku.edu.cn</a>
+                        <a href="#" class="item m-text-thin">QQ：820273346</a>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">说明</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2020-  Designed by Wide</p>
+        </div>
+
+    </footer>
+
+<!--/*/<th:block th:replace="_fragment :: script">/*/-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js"></script>
+
+    <script src="../static/lib/prism/prism.js"></script>
+    <script src="../static/lib/tocbot/tocbot.min.js"></script>
+    <script src="../static/lib/qrcode/qrcode.min.js"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
+<!--/*/</th:block>/*/-->
+
+    <script>
+        $('.menu.toggle').click(function () {
+            $('.m-item').toggleClass('m-mobile-hide');
+        });
+    </script>
+</body>
+</html>

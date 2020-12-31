@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wide.mapper.TypeMapper">
+
+    <resultMap id="TypeBlogMap" type="com.wide.bean.Type">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <collection column="id" property="blogs" ofType="com.wide.bean.Blog" select="getBlogByTypeId"/>
+    </resultMap>
+    <select id="getBlogByTypeId" resultType="com.wide.bean.Blog">
+        select *
+        from t_blog
+        where type_id = #{id} and published = true
+    </select>
+
+<!--    public Type saveType(Type type);-->
+    <insert id="saveType" useGeneratedKeys="true" parameterType="com.wide.bean.Type">
+        <selectKey keyProperty="id" order="BEFORE" resultType="long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into t_type (name) values (#{type.name})
+    </insert>
+
+<!--    public Type getType(Long id);-->
+    <select id="getType" resultType="com.wide.bean.Type">
+        select * from t_type where id = #{id}
+    </select>
+
+<!--    public Type getTypeByName(String name);-->
+    <select id="getTypeByName" resultType="com.wide.bean.Type">
+        select * from t_type where name = #{name}
+    </select>
+
+<!--    public List<Type> listType();-->
+    <select id="listType" resultMap="TypeBlogMap">
+        select * from t_type
+    </select>
+
+<!--    public Type updateType(Long id, Type type);-->
+    <update id="updateType">
+        update t_type set name = #{type.name} where id = #{id}
+    </update>
+
+<!--    public void deleteType(Long id);-->
+    <delete id="deleteType">
+        delete from t_type where id = #{id}
+    </delete>
+
+<!--    public List<Type> listTypeTop(int num);-->
+    <select id="listTypeAndBlogTop" resultMap="TypeBlogMap">
+        select t.*
+        from t_type t, t_blog b
+        where t.id = b.type_id
+        group by t.id
+        having count(*) > 0
+        limit #{num}
+    </select>
+</mapper>

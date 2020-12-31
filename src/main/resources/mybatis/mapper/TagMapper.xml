@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wide.mapper.TagMapper">
+
+    <resultMap id="tagSubmitBlogMap" type="com.wide.bean.Tag">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <collection column="id" property="blogs" ofType="com.wide.bean.Blog" select="getBlogsByTagId"/>
+    </resultMap>
+    <select id="getBlogsByTagId" resultType="com.wide.bean.Blog">
+        select b.*
+        from t_blog b, t_blog_tags bt
+        where b.id = bt.blogs_id and bt.tags_id = #{id} and b.published = true
+    </select>
+
+    <!--    public Tag saveTag(Tag tag);-->
+    <insert id="saveTag" useGeneratedKeys="true" parameterType="com.wide.bean.Tag">
+        <selectKey keyProperty="id" order="BEFORE" resultType="long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into t_tag (name) values (#{tag.name})
+    </insert>
+
+    <!--    public Tag getTag(Long id);-->
+    <select id="getTag" resultMap="tagSubmitBlogMap">
+        select * from t_tag where id = #{id}
+    </select>
+
+    <!--    public Tag getTagByName(String name);-->
+    <select id="getTagByName" resultType="com.wide.bean.Tag">
+        select * from t_tag where name = #{name}
+    </select>
+
+    <!--    public List<Tag> listTag();-->
+    <select id="listTag" resultMap="tagSubmitBlogMap">
+        select * from t_tag
+    </select>
+
+    <!--    public Tag updateTag(Long id, Tag Tag);-->
+    <update id="updateTag">
+        update t_tag set name = #{tag.name} where id = #{id}
+    </update>
+
+    <!--    public void deleteTag(Long id);-->
+    <delete id="deleteTag">
+        delete from t_tag where id = #{id}
+    </delete>
+
+<!--    public List<Tag> listTagByIds(String tagIds);-->
+    <select id="listTagByIds" parameterType="string" resultType="com.wide.bean.Tag">
+        select * from t_tag where id in (#{tagIds})
+    </select>
+
+<!--    public List<Tag> listTagAndBlogTop(int num);-->
+    <select id="listTagAndBlogTop" resultMap="tagSubmitBlogMap">
+        select t.*
+        from t_tag t, t_blog_tags tb
+        where t.id = tb.tags_id
+        group by t.id
+        having count(*) > 0
+        limit #{num}
+    </select>
+</mapper>

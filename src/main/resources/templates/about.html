@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="_fragment :: head(~{::title})">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/me.css">
+    <!--轮播-->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <!--导航-->
+    <nav th:replace="_fragment :: menu(5)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+        <div class="ui container">
+            <div class="ui inverted secondary stackable menu">
+                <div class="middle aligned item" style="width: 223px; height: 55px;">
+                    <img src="../static/images/webset/myBlog.png" th:src="@{/images/webset/myBlog.png}" style="width: 200px;">
+                </div>
+                <a href="#" class="m-item item m-mobile-hide"><i class="home icon large"></i>首页</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="dochub icon large"></i>分类</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="tags icon large"></i>标签</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="archive icon large"></i>归档</a>
+                <a href="#" class="m-item item m-mobile-hide"><i class="info circle icon large"></i>关于我</a>
+                <div class="right m-item item m-mobile-hide">
+                    <div class="ui icon inverted transparent input m-margin-tb-tiny">
+                        <input type="text" placeholder="请输入您要搜索的内容">
+                        <i class="search link icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="ui menu toggle black icon button m-right-top m-mobile-show">
+            <i class="sidebar icon"></i>
+        </a>
+    </nav>
+
+    <!--图片轮播部分-->
+    <div class="m-container-max m-padded-tb-big">
+        <div class="swiper-container" style="width: 90%;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="ui list">
+                        <div class="item">
+                            <img src="../static/images/aboutMe/AboutMe1.jpeg" th:src="@{/images/aboutMe/AboutMe1.jpeg}" alt="" class="ui massive rounded image" style="width: 1100px !important;">
+                        </div>
+                        <div class="item">
+                            <div class="ui teal large  label">山东大学校长奖学金</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="ui list">
+                        <div class="item">
+                            <img src="../static/images/aboutMe/AboutMe0.jpeg" th:src="@{/images/aboutMe/AboutMe0.jpeg}" alt="" class="ui massive rounded image" style="width: 1100px !important;">
+                        </div>
+                        <div class="item">
+                            <div class="ui teal large label">本科及研究生期间证书</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="ui list">
+                        <div class="item">
+                            <img src="../static/images/aboutMe/AboutMe2.jpeg" th:src="@{/images/aboutMe/AboutMe2.jpeg}" alt="" class="ui massive rounded image" style="width: 1100px !important;">
+                        </div>
+                        <div class="item">
+                            <div class="ui teal large label">学生会组织迎新生晚会</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="ui list">
+                        <div class="item">
+                            <img src="../static/images/aboutMe/AboutMe3.jpeg" th:src="@{/images/aboutMe/AboutMe3.jpeg}" alt="" class="ui massive rounded image" style="width: 1100px !important;">
+                        </div>
+                        <div class="item">
+                            <div class="ui teal large label">学生会宣传网络中心</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="ui list">
+                        <div class="item">
+                            <img src="../static/images/aboutMe/AboutMe4.jpeg" th:src="@{/images/aboutMe/AboutMe4.jpeg}" alt="" class="ui massive rounded image" style="width: 1100px !important;">
+                        </div>
+                        <div class="item">
+                            <div class="ui teal large label">毕业典礼主持掠影</div>
+                        </div>
+                    </div>
+                </div>
+<!--                <div class="swiper-slide">-->
+<!--                    <div class="ui list">-->
+<!--                        <div class="item">-->
+<!--                            <img src="../static/images/aboutMe/AboutMe5.jpeg" th:src="@{/images/aboutMe/AboutMe5.jpeg}" alt="" class="ui massive rounded image" style="width: 1100px !important;">-->
+<!--                        </div>-->
+<!--                        <div class="item">-->
+<!--                            <div class="ui teal large basic label">主办纪念"一二九"短剧大赛</div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="swiper-slide">
+                    <div class="ui list">
+                        <div class="item">
+                            <img src="../static/images/aboutMe/AboutMe6.jpeg" th:src="@{/images/aboutMe/AboutMe6.jpeg}" alt="" class="ui massive rounded image" style="width: 1100px !important;">
+                        </div>
+                        <div class="item">
+                            <div class="ui teal large label">宣网小分队合影</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="ui list">
+                        <div class="item">
+                            <img src="../static/images/aboutMe/AboutMe7.jpeg" th:src="@{/images/aboutMe/AboutMe7.jpeg}" alt="" class="ui massive rounded image" style="width: 1100px !important;">
+                        </div>
+                        <div class="item">
+                            <div class="ui teal large label">2015级软件工程1班毕业合影</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="swiper-button-prev swiper-button-black"></div>
+            <div class="swiper-button-next swiper-button-black"></div>
+        </div>
+    </div>
+
+    <!--中间内容-->
+    <div class="m-container-max">
+        <div class="ui container" style="width: 90%;">
+            <div class="ui stackable grid m-padded-tb">
+                <div class="twelve wide column">
+
+                    <div class="ui raised segments">
+
+                        <!--教育经历-->
+                        <div class="ui top secondary attached segment">
+                            <h3 class="ui header">
+                                <i class="ui graduation cap icon"></i>
+                                <div class="content">
+                                    教育经历
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="ui attached segment">
+                            <div class="ui centered cards">
+                                <div class="ui raised centered red card m-padded-lr m-mobile-lr-clear" style="width: 40%;">
+                                    <div class="content">
+                                        <div class="header">
+                                            山东大学
+                                        </div>
+                                        <div class="meta m-margin-top-tiny">本科</div>
+                                        <div class="description m-margin-top-tiny">
+                                            软件工程专业（2015.09-2019.06）
+                                        </div>
+                                        <div class="description m-margin-top-tiny">
+                                            四年绩点：90.29（百分制）
+                                        </div>
+                                        <div class="description m-margin-top-tiny">
+                                            排名：2/131
+                                        </div>
+                                        <div class="description m-margin-top-tiny">
+                                            2019年保送至北京大学
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui raised centered red card m-padded-lr m-mobile-lr-clear" style="width: 40%;">
+                                    <div class="content" >
+                                        <div class="header">
+                                            北京大学
+                                        </div>
+                                        <div class="meta m-margin-top-tiny">研究生</div>
+                                        <div class="description m-margin-top-tiny">
+                                            计算机技术专业
+                                        </div>
+                                        <div class="description m-margin-top-tiny">
+                                            在校时间：2019.09至今
+                                        </div>
+                                        <div class="description m-margin-top-tiny">
+                                            研一绩点：3.28（四分制）
+                                        </div>
+                                        <div class="description m-margin-top-tiny">
+                                            目前正在进行后端开发学习
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--曾获奖励-->
+                        <div class="ui secondary attached segment">
+                            <h3 class="ui header">
+                                <i class="check circle outline icon"></i>
+                                <div class="content">
+                                    <a href="#" target="_blank" th:href="@{/certificate}">曾获奖励</a>
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="ui attached segment">
+                            <ol class="ui list">
+                                <div class="ui large labels">
+                                    <li value="">
+                                        <div class="ui large label">
+                                            奖学金
+                                            <div class="detail">6</div>
+                                        </div>
+                                        <ol>
+                                            <li value="">
+                                                <a class="ui red image label m-margin-l-first-label">
+                                                    2016.11
+                                                    <div class="detail">国家奖学金</div>
+                                                </a>
+                                            </li>
+                                            <li value="">
+                                                <a class="ui orange image label m-margin-l-first-label">
+                                                    2018.11
+                                                    <div class="detail">山东大学校长奖学金</div>
+                                                </a>
+                                            </li>
+                                            <li value="">
+                                                <a class="ui teal image label m-margin-l-first-label">
+                                                    2016.11
+                                                    <div class="detail">山东大学一等奖学金</div>
+                                                </a>
+                                                <a class="ui teal image label">
+                                                    2017.11
+                                                    <div class="detail">山东大学一等奖学金</div>
+                                                </a>
+                                                <a class="ui teal image label">
+                                                    2018.11
+                                                    <div class="detail">山东大学一等奖学金</div>
+                                                </a>
+                                            </li>
+                                            <li value="">
+                                                <a class="ui green image label m-margin-l-first-label">
+                                                    2017.11
+                                                    <div class="detail">泰豪奖学金</div>
+                                                </a>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li value="">
+                                        <div class="ui large label">
+                                            科研竞赛
+                                            <div class="detail">13</div>
+                                        </div>
+                                        <ol>
+                                            <li value="">
+                                                <a class="ui red image label m-margin-l-first-label">
+                                                    2019.12
+                                                    <div class="detail">互联网技术创新大赛二等奖</div>
+                                                </a>
+                                            </li>
+                                            <li value="">
+                                                <a class="ui orange image label m-margin-l-first-label">
+                                                    2018.04
+                                                    <div class="detail">美国数学建模竞赛H奖</div>
+                                                </a>
+                                            </li>
+                                            <li value="">
+                                                <a class="ui teal image label m-margin-l-first-label">
+                                                    2017.11
+                                                    <div class="detail">全国大学生数学建模省一等奖</div>
+                                                </a>
+                                                <a class="ui teal image label">
+                                                    2018.09
+                                                    <div class="detail">山东省互联网+创新创业大赛银奖</div>
+                                                </a>
+                                                <a class="ui teal image label">
+                                                    2017.03
+                                                    <div class="detail">蓝桥杯程序竞赛山东省三等奖</div>
+                                                </a>
+                                                <a class="ui teal image label">
+                                                    2018.03
+                                                    <div class="detail">蓝桥杯程序竞赛山东省三等奖</div>
+                                                </a>
+                                                <a class="ui teal image label">
+                                                    2017.05
+                                                    <div class="detail">山东省 ACM 竞赛优胜奖</div>
+                                                </a>
+                                                <a class="ui teal image label">
+                                                    2017.02
+                                                    <div class="detail">亚太数学建模竞赛三等奖</div>
+                                                </a>
+                                            </li>
+                                            <li value="">
+                                                <a class="ui green image label m-margin-l-first-label">
+                                                    2017.04
+                                                    <div class="detail">威海市程序设计竞赛银奖</div>
+                                                </a>
+                                                <a class="ui green image label">
+                                                    2016.03
+                                                    <div class="detail">校程序设计竞赛二等奖</div>
+                                                </a>
+                                                <a class="ui green image label">
+                                                    2017.03
+                                                    <div class="detail">校程序设计竞赛二等奖</div>
+                                                </a>
+                                                <a class="ui green image label">
+                                                    2017.03
+                                                    <div class="detail">校程序设计新星赛二等奖</div>
+                                                </a>
+                                                <a class="ui green image label">
+                                                    2017.07
+                                                    <div class="detail">校数学建模竞赛三等奖</div>
+                                                </a>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                    <li value="">
+                                        <div class="ui large label">
+                                            学生工作
+                                            <div class="detail">6</div>
+                                        </div>
+                                        <ol>
+                                            <li value="">
+                                                <a class="ui red image label m-margin-l-first-label">
+                                                    2016年
+                                                    <div class="detail">山东大学优秀学生干部</div>
+                                                </a>
+                                                <a class="ui red image label">
+                                                    2017年
+                                                    <div class="detail">山东大学优秀学生干部</div>
+                                                </a>
+                                                <a class="ui red image label">
+                                                    2018年
+                                                    <div class="detail">山东大学优秀学生干部</div>
+                                                </a>
+                                            </li>
+                                            <li value="">
+                                                <a class="ui orange image label m-margin-l-first-label">
+                                                    2020.12
+                                                    <div class="detail">北京大学学生工作奖</div>
+                                                </a>
+                                                <a class="ui orange image label m-margin-l-first-label">
+                                                    2016.11
+                                                    <div class="detail">山东省优秀学生</div>
+                                                </a>
+                                                <a class="ui orange image label">
+                                                    2019.07
+                                                    <div class="detail">山东大学优秀毕业生</div>
+                                                </a>
+                                            </li>
+                                        </ol>
+                                    </li>
+                                </div>
+                            </ol>
+                        </div>
+
+                        <!--项目经历-->
+                        <div class="ui secondary attached segment">
+                            <h3 class="ui header">
+                                <i class="keyboard icon"></i>
+                                <div class="content">
+                                    项目经历
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="ui attached segment">
+                            <div class="ui one cards">
+                                <div class="ui teal card m-margin-lr-big">
+                                    <div class="content">
+                                        <div class="header">个人博客网站</div>
+                                        <div class="meta m-margin-top-tiny">2020年12月</div>
+                                        <div class="description">
+                                            <p>前端：HTML + Semantic UI + Thymeleaf</p>
+                                            <p>数据库：MySQL + MyBatis + Redis +腾讯云服务器 + 腾讯云COS</p>
+                                            <p>后端：Spring + SpringMVC + SpringBoot</p>
+                                        </div>
+                                    </div>
+                                    <div class="extra content">
+                                        <i class="hourglass half icon"></i>
+                                        正在进行中……
+                                    </div>
+                                </div>
+                                <div class="ui orange card m-margin-lr-big">
+                                    <div class="content">
+                                        <div class="header">MCM/ICM竞赛</div>
+                                        <div class="meta m-margin-top-tiny">2018年04月</div>
+                                        <div class="description">
+                                            <p>完成题为“Several Issues of the Plan of Charging Stations”的论文， 计算电动汽车普及时，全球充电桩数量并给出建设计划;选择韩国 Dongnam- gu 分析充电桩的最佳设置位置;用印度尼西亚和沙特阿拉伯验证模型稳健性。</p>
+                                        </div>
+                                    </div>
+                                    <div class="extra content">
+                                        <div class="ui middle aligned two column grid">
+                                            <div class="column">
+                                                <i class="check icon"></i>已完成
+                                            </div>
+                                            <div class="right aligned column">
+                                                <i class="trophy icon"></i>Honorable Mention
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui orange card m-margin-lr-big">
+                                    <div class="content">
+                                        <div class="header">全国大学生数学建模竞赛</div>
+                                        <div class="meta m-margin-top-tiny">2017年10月</div>
+                                        <div class="description">
+                                            <p>题为“CT系统参数标定及成像”，运用最小二乘法、滤波反投影算法、CT 图形重建等做出合理假设，最终求出 CT 投影变换的 180 个方向，并重建出被 检测物体实际形状。</p>
+                                        </div>
+                                    </div>
+                                    <div class="extra content">
+                                        <div class="ui middle aligned two column grid">
+                                            <div class="column">
+                                                <i class="check icon"></i>已完成
+                                            </div>
+                                            <div class="right aligned column">
+                                                <i class="trophy icon"></i>山东赛区一等奖
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--学生工作-->
+                        <div class="ui bottom secondary attached segment">
+                            <h3 class="ui header">
+                                <i class="folder open outline icon"></i>
+                                <div class="content">
+                                    学生工作经历
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="ui attached segment">
+                            <div class="ui one cards">
+                                <div class="ui raised teal card m-margin-lr-big">
+                                    <div class="content">
+                                        <div class="header">北京大学2019级未名二苑党支部副书记</div>
+                                        <div class="meta">
+                                            <span class="category">2019年至今</span>
+                                        </div>
+                                        <div class="description">
+                                            <p>
+                                                负责2019级未名二苑党支部党员大会、民主生活会、党课等党内活动的开展以及会议记录等，参与未名二苑党团联合活动的开展。
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="extra content">
+                                        <div class="ui middle aligned two column grid">
+                                            <div class="column">
+                                                <i class="hourglass half icon"></i>任期中……
+                                            </div>
+                                            <div class="right aligned column">
+                                                <i class="trophy icon"></i>北京大学社会工作奖
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="ui raised red card m-margin-lr-big">
+                                    <div class="content">
+                                        <div class="header">软件工程1班班长</div>
+                                        <div class="meta">
+                                            <span class="category">2015年-2019年</span>
+                                        </div>
+                                        <div class="description">
+                                            <p>
+                                                组织开展各类文体、学习活动共三十余次，带领班级获得校级优秀班集体、 志愿服务先进班集体、志愿服务先进团支部等荣誉称号，连续三年获得校级优秀学生干部。
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="extra content">
+                                        <div class="ui middle aligned two column grid">
+                                            <div class="column">
+                                                <i class="check icon"></i>任期结束
+                                            </div>
+                                            <div class="right aligned column">
+                                                <i class="trophy icon"></i>校优秀学生干部 3 次
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="ui raised red card m-margin-lr-big">
+                                    <div class="content">
+                                        <div class="header">校学生会副主席</div>
+                                        <div class="meta">
+                                            <span class="category">2017年-2018年</span>
+                                        </div>
+                                        <div class="description">
+                                            <p>
+                                                举办迎新晚会、五四表彰会等大型活动活动十余次，获团中央优秀组织奖，同时负责新媒体平台的运营，参与组织微信推送 272 篇、海报 67 张、 说说 766 条、各类视频 11 个。
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="extra content">
+                                        <div class="ui middle aligned two column grid">
+                                            <div class="column">
+                                                <i class="check icon"></i>任期结束
+                                            </div>
+                                            <div class="right aligned column">
+                                                <i class="trophy icon"></i>山东省优秀学生
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="four wide column">
+                    <div class="ui raised segments">
+                        <!--个人信息-->
+                        <div class="ui top secondary attached segment">
+                            <h3 class="ui header">
+                                <i class="user circle icon"></i>
+                                <div class="content">
+                                    关于我
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="ui attached segment">
+                            <div class="ui fluid card">
+                                <div class="image">
+                                    <img src="../static/images/myself/myPhoto2.jpeg" th:src="@{/images/myself/myPhoto2.jpeg}">
+                                </div>
+                                <div class="content">
+                                    <a class="header">Wide Sui</a>
+                                    <div class="description">
+                                        <i class="birthday cake icon"></i>1996.08
+                                    </div>
+                                    <div class="description m-margin-top-small">
+                                        <i class="home icon"></i>山东省 东营市
+                                    </div>
+                                    <div class="description m-margin-top-small">
+                                        <address>
+                                            <i class="envelope icon"></i>
+                                            <a href="mailto:swk@pku.edu.cn">swk@pku.edu.cn</a>
+                                        </address>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--学习内容-->
+                        <div class="ui secondary attached segment">
+                            <h3 class="ui header">
+                                <i class="book icon"></i>
+                                <div class="content">
+                                    目前学习内容
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="ui attached segment" style="text-align: justify;">
+                            <div class="ui blue large label m-margin-small">MySQL</div>
+                            <div class="ui blue large label m-margin-small">Redis</div>
+                            <div class="ui blue large label m-margin-small">Vue</div>
+                            <div class="ui blue large label m-margin-small">SpringMVC</div>
+                            <div class="ui blue large label m-margin-small">SpringBoot</div>
+                            <div class="ui blue large label m-margin-small">MyBatis</div>
+                            <div class="ui blue large label m-margin-small">JavaWeb</div>
+                            <div class="ui blue large label m-margin-small">Spring</div>
+                            <div class="ui blue large label m-margin-small">Linux</div>
+                        </div>
+
+                        <!--校园经历-->
+                        <div class="ui secondary attached segment">
+                            <h3 class="ui header">
+                                <i class="exchange icon"></i>
+                                <div class="content">
+                                    校园交流
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="ui attached segment" style="text-align: center;">
+                            <img class="ui small middle aligned image" src="../static/images/shuiyuanlogo.png" th:src="@{/images/shuiyuanlogo.png}">
+                            <!--                        <span>韩国水原大学短期交流</span>-->
+                        </div>
+
+                        <!--等级证书-->
+                        <div class="ui secondary attached segment">
+                            <h3 class="ui header">
+                                <i class="certificate icon"></i>
+                                <div class="content">
+                                    等级证书
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="ui attached segment" style="text-align: center;">
+                            <div class="ui blue large basic label m-margin-small">英语四级</div>
+                            <div class="ui green large basic label m-margin-small">英语六级</div>
+                        </div>
+
+                        <!--社交媒体-->
+                        <div class="ui secondary attached segment">
+                            <h3 class="ui header">
+                                <i class="ui at icon"></i>
+                                <div class="content">
+                                    社交媒体
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="ui attached segment" style="text-align: center;">
+                            <div class="ui horizontal list">
+                                <div class="item">
+                                    <!--                                <a class="ui wechat circular icon button" id="wechatBtn"><i class="wechat icon"></i></a>-->
+                                    <a class="wechat" id="wechatBtn">
+                                        <img class="ui avatar mini image" src="../static/images/socialMedia/wechatIcon.png" th:src="@{/images/socialMedia/wechatIcon.png}">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <!--                                <a class="ui qq circular icon button" id="qqBtn"><i class="qq icon"></i></a>-->
+                                    <a class="qq" id="qqBtn">
+                                        <img class="ui avatar mini image" src="../static/images/socialMedia/qqIcon.png" th:src="@{/images/socialMedia/qqIcon.png}">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <!--                                <a class="ui weibo circular icon button" id="weiboBtn"><i class="weibo icon"></i></a>-->
+                                    <a class="weibo" id="weiboBtn">
+                                        <img class="ui avatar mini image" src="../static/images/socialMedia/weiboIcon.png" th:src="@{/images/socialMedia/weiboIcon.png}">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <!--                                <a class="ui instagram circular icon button" id="insBtn"><i class="instagram icon"></i></a>-->
+                                    <a class="instagram" id="insBtn">
+                                        <img class="ui avatar mini image" src="../static/images/socialMedia/insIcon.png" th:src="@{/images/socialMedia/insIcon.png}">
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="ui wechat-qr popup transition hidden">
+                                <img src="../static/images/socialMedia/wechatQR.jpeg" th:src="@{/images/socialMedia/wechatQR.jpeg}" alt="" class="ui rounded image" style="width: 400px !important;">
+                            </div>
+                            <div class="ui qq-qr popup transition hidden">
+                                <img src="../static/images/socialMedia/qqQR.jpeg" th:src="@{/images/socialMedia/qqQR.jpeg}" alt="" class="ui rounded image" style="width: 400px !important;">
+                            </div>
+                            <div class="ui weibo-qr popup transition hidden">
+                                <img src="../static/images/socialMedia/weiboQR.jpeg" th:src="@{/images/socialMedia/weiboQR.jpeg}" alt="" class="ui rounded image" style="width: 400px !important;">
+                            </div>
+                            <div class="ui instagram-qr popup transition hidden">
+                                <img src="../static/images/socialMedia/insQR.jpeg" th:src="@{/images/socialMedia/insQR.jpeg}" alt="" class="ui rounded image" style="width: 400px !important;">
+                            </div>
+                        </div>
+
+                        <!--音乐歌单-->
+                        <div class="ui secondary attached segment">
+                            <h3 class="ui header">
+                                <i class="ui music icon"></i>
+                                <div class="content">
+                                    音乐歌单
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="ui attached segment" style="text-align: center;">
+                            <div class="ui horizontal list">
+                                <div class="item">
+                                    <a href="https://y.music.163.com/m/playlist?app_version=8.0.01&id=317477172&userid=253448659&creatorId=253448659" target="_blank">
+                                        <img class="ui avatar mini image" src="../static/images/musicIcon/wyyIcon.png" th:src="@{/images/musicIcon/wyyIcon.png}">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="https://open.spotify.com/playlist/37i9dQZF1EM9AhYp2lIKd4?si=umpGtwF-TOWCwau7AKSh1w" target="_blank">
+                                        <img class="ui avatar mini image" src="../static/images/musicIcon/spotifyIcon.png" th:src="@{/images/musicIcon/spotifyIcon.png}">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="https://music.apple.com/cn/playlist/%E6%88%91%E5%96%9C%E6%AC%A2/pl.u-aZb0kg6FPyNPB9P" target="_blank">
+                                        <img class="ui avatar mini image" src="../static/images/musicIcon/appleMusicIcon.png" th:src="@{/images/musicIcon/appleMusicIcon.png}" target="_blank">
+                                    </a>
+                                </div>
+                                <div class="item">
+                                    <a href="https://y.qq.com/n/yqq/playlist/2451958290.html" target="_blank">
+                                        <img class="ui avatar mini image" src="../static/images/musicIcon/QQMusicIcon.png" th:src="@{/images/musicIcon/QQMusicIcon.png}">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--我的爱好-->
+                        <div class="ui secondary attached segment">
+                            <h3 class="ui header">
+                                <i class="heart icon"></i>
+                                <div class="content">
+                                    喜爱
+                                </div>
+                            </h3>
+                        </div>
+                        <div class="ui bottom attached segment" style="text-align: center;">
+                            <div class="ui middle aligned list">
+                                <div class="item m-margin-tb-small">
+                                    <a href="https://www.mariahcarey.com/" target="_blank">
+                                        <img class="ui small middle aligned image" style="width: 200px;" src="../static/images/myself/MCIcon.png" th:src="@{/images/myself/MCIcon.png}">
+                                    </a>
+                                </div>
+                                <div class="item m-margin-tb-small">
+                                    <a href="https://www.pattilabelle.com/" target="_blank">
+                                        <img class="ui small middle aligned image" style="width: 200px;" src="../static/images/myself/pattiIcon.png" th:src="@{/images/myself/pattiIcon.png}">
+                                    </a>
+                                </div>
+                                <div class="item m-margin-tb-small">
+                                    <a href="https://lol.qq.com/main.shtml" target="_blank">
+                                        <img class="ui small middle aligned image" style="width: 200px;" src="../static/images/myself/lolIcon.png" th:src="@{/images/myself/lolIcon.png}">
+                                    </a>
+                                </div>
+                                <div class="item m-margin-tb-small">
+                                    <a href="https://www.iqiyi.com/a_19rrk2hct9.html" target="_blank">
+                                        <img class="ui small middle aligned image" style="width: 200px;" src="../static/images/myself/wlwzIcon.png" th:src="@{/images/myself/wlwzIcon.png}">
+                                    </a>
+                                </div>
+                                <div class="item m-margin-tb-small">
+                                    <a href="https://www.billboard.com/" target="_blank">
+                                        <img class="ui small middle aligned image" style="width: 200px;" src="../static/images/myself/billboardIcon.png" th:src="@{/images/myself/billboardIcon.png}">
+                                    </a>
+                                </div>
+                                <div class="item m-margin-tb-small">
+                                    <a>
+                                        <img class="ui small middle aligned image" style="width: 200px;" src="../static/images/myself/r&bIcon.png" th:src="@{/images/myself/r&bIcon.png}">
+                                    </a>
+                                </div>
+<!--                                <div class="item m-margin-tb-small">-->
+<!--                                    <a href="#">-->
+<!--                                        <img class="ui small middle aligned image" style="width: 200px;" src="../static/images/myself/soulIcon.png" th:src="@{/images/myself/soulIcon.png}">-->
+<!--                                    </a>-->
+<!--                                </div>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--底部-->
+    <footer th:replace="_fragment :: footer" class="ui inverted vertical segment m-padded-t">
+        <div class="ui center aligned container">
+            <div class="ui inverted divided stackable grid">
+                <div class="four wide column">
+                    <div class="ui inverted link list">
+                        <!--                        <h4 class="ui inverted header m-text-thin m-text-spaced">我的微信</h4>-->
+                        <div class="item">
+                            <img src="../static/images/WeChat.jpeg" class="ui medium rounded image" alt="" style="width: 150px">
+                        </div>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced" >最新博客</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+                        <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+                        <a href="#" class="item m-text-thin">用户故事（User Story）</a>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">联系我</h4>
+                    <div class="ui inverted link list">
+                        <a href="#" class="item m-text-thin">Email：swk@pku.edu.cn</a>
+                        <a href="#" class="item m-text-thin">QQ：820273346</a>
+                    </div>
+                </div>
+                <div class="four wide column">
+                    <h4 class="ui inverted header m-text-thin m-text-spaced">说明</h4>
+                    <p class="m-text-thin m-text-spaced m-opacity-mini">这是我的个人博客、会分享关于编程、写作、思考相关的任何内容，希望可以给来到这儿的人有所帮助...</p>
+                </div>
+            </div>
+            <div class="ui inverted section divider"></div>
+            <p class="m-text-thin m-text-spaced m-opacity-tiny">Copyright © 2020-  Designed by Wide</p>
+        </div>
+
+    </footer>
+
+<!--/*/<th:block th:replace="_fragment :: script">/*/-->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+    <script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js"></script>
+
+    <script src="../static/lib/prism/prism.js"></script>
+    <script src="../static/lib/tocbot/tocbot.min.js"></script>
+    <script src="../static/lib/qrcode/qrcode.min.js"></script>
+    <script src="../static/lib/waypoints/jquery.waypoints.min.js"></script>
+
+    <!--图片轮播-->
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"> </script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"> </script>
+<!--/*/</th:block>/*/-->
+
+
+    <script>
+        $('.menu.toggle').click(function () {
+            $('.m-item').toggleClass('m-mobile-hide');
+        });
+
+        $('#wechatBtn').popup({
+            popup : $('.wechat-qr.popup'),
+            on: 'click',
+            position: 'top left',
+        });
+
+        $('#qqBtn').popup({
+            popup : $('.qq-qr.popup'),
+            on: 'click',
+            position: 'top center',
+        });
+
+        $('#weiboBtn').popup({
+            popup : $('.weibo-qr.popup'),
+            on: 'click',
+            position: 'top center',
+        });
+
+        $('#insBtn').popup({
+            popup : $('.instagram-qr.popup'),
+            on: 'click',
+            position: 'top right',
+        });
+
+    </script>
+
+    <script>
+        var mySwiper = new Swiper('.swiper-container', {
+            direction: 'horizontal',
+            loop: true,
+            autoplay: true,
+            delay: 3000,
+            speed: 2000,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            effect: 'slide',
+            disableOnInteraction: false,
+            // paginationType : 'progress',
+        });
+
+    </script>
+</body>
+</html>
