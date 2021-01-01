@@ -16,8 +16,8 @@
 
 ### 2、服务器
 
-* [腾讯云轻量应用服务器](https://cloud.tencent.com/product/lighthouse)
-* [腾讯云对象存储](https://cloud.tencent.com/product/cos)
+* 腾讯云轻量应用服务器
+* 腾讯云对象存储
 
 ### 3、其他工具
 
