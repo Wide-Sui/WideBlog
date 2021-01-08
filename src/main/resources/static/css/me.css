@@ -159,6 +159,10 @@ body {
     font-weight: 700 !important;
 }
 
+/*--首页推荐超出一行的话--*/
+.m-text-index-height {
+    line-height: 20px !important;
+}
 
 .m-text-thin {
     font-weight: 300 !important;
@@ -214,6 +218,11 @@ body {
 .m-margin-tb-tiny {
     margin-top: 0.3em !important;
     margin-bottom: 0.3em !important;
+}
+
+.m-margin-tb-tine {
+    margin-top: 0em !important;
+    margin-bottom: 0em !important;
 }
 
 .m-margin-tb-small {

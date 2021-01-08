@@ -642,7 +642,7 @@ h5,h6{font-size:1em;}
                                 <input type="hidden" name="blogId" th:value="${blog.id}">
                                 <input type="hidden" name="parentCommentId" value="-1">
                                 <div class="field">
-                                    <textarea name="content" placeholder="请输入评论信息..."></textarea>
+                                    <textarea class="wishContent" name="content" placeholder="请输入评论信息..." maxlength="200"></textarea>
                                 </div>
                                 <div class="fields">
                                     <div class="field m-mobile-wide m-margin-bottom-small">
@@ -657,9 +657,14 @@ h5,h6{font-size:1em;}
                                             <input type="text" name="email" placeholder="邮箱" th:value="${session.user}!=null ? ${session.user.email}">
                                         </div>
                                     </div>
-                                    <div class="field  m-margin-bottom-small m-mobile-wide">
+                                    <div class="field m-margin-bottom-small m-mobile-wide">
                                         <button id="commentpost-btn" type="button" class="ui teal button m-mobile-wide"><i class="edit icon"></i>发布</button>
                                     </div>
+
+                                    <div class="field m-margin-bottom-small m-mobile-wide wordsNum">
+                                        您已经输入0/200个字
+                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -882,6 +887,34 @@ h5,h6{font-size:1em;}
             $("[name='parentCommentId']").val(commentId);
             $(window).scrollTo($('#comment-form'),500);
         }
+
+        var checkStrLengths = function (str, maxLength) {
+            var maxLength = maxLength;
+            var result = 0;
+            if (str && str.length > maxLength) {
+                result = maxLength;
+            } else {
+                result = str.length;
+            }
+            return result;
+        }
+
+        $(".wishContent").on('input propertychange', function () {
+
+            //获取输入内容
+            var userDesc = $(this).val();
+
+            //判断字数
+            var len;
+            if (userDesc) {
+                len = checkStrLengths(userDesc, 200);
+            } else {
+                len = 0
+            }
+
+            //显示字数
+            $(".wordsNum").html('您已经输入' + len + '/200个字');
+        });
     </script>
 </body>
 </html>

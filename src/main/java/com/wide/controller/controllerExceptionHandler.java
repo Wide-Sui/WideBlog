@@ -1,7 +1,6 @@
 package com.wide.controller;
 
 import com.wide.exception.BizException;
-import com.wide.exception.BlogNotExistException;
 import com.wide.exception.CommonEnum;
 import com.wide.exception.ResultBody;
 import org.slf4j.Logger;
@@ -10,16 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestControllerAdvice;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.HashMap;
 import java.util.Map;
 
 //@EnableWebMvc
-@RestControllerAdvice
+@ControllerAdvice
 public class controllerExceptionHandler {
     {
         logger = LoggerFactory.getLogger(this.getClass());

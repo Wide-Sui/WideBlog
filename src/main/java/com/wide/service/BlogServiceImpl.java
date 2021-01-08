@@ -5,7 +5,6 @@ import com.wide.Utils.MarkdownUtils;
 import com.wide.Utils.RedisUtil;
 import com.wide.bean.Blog;
 import com.wide.exception.BizException;
-import com.wide.exception.BlogNotExistException;
 import com.wide.mapper.BlogMapper;
 import com.wide.mapper.BlogTagMapper;
 import com.wide.mapper.CommentMapper;

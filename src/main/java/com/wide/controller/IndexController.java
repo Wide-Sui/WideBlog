@@ -50,7 +50,6 @@ public class IndexController {
 
         List<Tag> tags = tagService.listTagTop(10);
         model.addAttribute("tags", tags);
-//        System.out.println("tags:" + tags);
         model.addAttribute("recommendBlogs", blogService.listRecommendBlogTop(8));
         return "index";
     }
@@ -59,7 +58,6 @@ public class IndexController {
     public String blog(@PathVariable Long id, Model model) {
         blogService.updateBlogViews(id);
         Blog blog = blogService.getAndConvert(id);
-//        System.out.println("blog: " + blog);
         model.addAttribute("blog", blog);
         model.addAttribute("recommendBlogs", blogService.listRecommendBlogTop(8));
         return "blog";
