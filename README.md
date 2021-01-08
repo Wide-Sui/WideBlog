@@ -1,6 +1,6 @@
 # WideBlog我的博客
 
-🔗 [Wide Blog](http://159.75.7.169/index)
+🔗 [Wide Blog](http://widesui.ltd)
 
 ## 一、搭建环境
 
@@ -30,6 +30,7 @@
 * 目录生成：[Tocbot](https://tscanlin.github.io/tocbot/)
 
 * 阅读二维码生成：[qrcode.js](https://davidshimjs.github.io/qrcodejs/)
+* 分页工具：[PageHelper](https://github.com/pagehelper/Mybatis-PageHelper/)
 
 ### 4、开发工具
 
@@ -57,47 +58,52 @@
 
 #### （1）主页
 
-<img src="https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/20210102010100.png" style="zoom:33%;" />
+<img src="https://github.com/Wide-Sui/WideBlog/blob/master/READMEPics/indexPic.png" style="zoom:33%;" />
 
 
 
 #### （2）博客详情
 
-<img src="https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/20210101215409.png" style="zoom:30%;" />
+<img src="https://github.com/Wide-Sui/WideBlog/blob/master/READMEPics/blogPic.png" style="zoom:30%;" />
 
 
 
 #### （3）按分类查看
 
-<img src="https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/image-20210101215541818.png" style="zoom:37%;" />
+<img src="https://github.com/Wide-Sui/WideBlog/blob/master/READMEPics/typePic.png" style="zoom:37%;" />
 
 
 
 #### （4）按标签查看
 
-<img src="https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/image-20210101215637451.png" style="zoom:37%;" />
+<img src="https://github.com/Wide-Sui/WideBlog/blob/master/READMEPics/tagPic.png" style="zoom:37%;" />
 
 
 
 #### （5）归档
 
-<img src="https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/20210101215155.png" style="zoom:49%;" />
+<img src="https://github.com/Wide-Sui/WideBlog/blob/master/READMEPics/achivePic.png" style="zoom:49%;" />
 
 
 
-#### （6）导航栏
+#### （6）管理博客
 
-<img src="https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/image-20210101215747681.png" style="zoom:37%;" />
+<img src="https://github.com/Wide-Sui/WideBlog/blob/master/READMEPics/blogAdminPic.png" style="zoom:37%;" />
 
 
 
-#### （7）底部导航
+#### （7）类型管理
 
-<img src="https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/image-20210101215905348.png" alt="image-20210101215905348" style="zoom: 37%;" />
+<img src="https://github.com/Wide-Sui/WideBlog/blob/master/READMEPics/typeAdminPic.png" style="zoom: 37%;" />
+
+
+#### （8）类型管理
+
+<img src="https://github.com/Wide-Sui/WideBlog/blob/master/READMEPics/tagAdminPic.png" style="zoom: 37%;" />
 
 
 
 ## 三、数据库设计
 
-<img src="https://myblog-1304618530.cos.ap-beijing.myqcloud.com/blogPics/image-20210102002450870.png" alt="image-20210102002450870" style="zoom:50%;" />
+<img src="https://github.com/Wide-Sui/WideBlog/blob/master/READMEPics/dbPic.png" style="zoom:50%;" />
 
