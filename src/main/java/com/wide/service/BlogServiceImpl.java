@@ -102,7 +102,7 @@ public class BlogServiceImpl implements BlogService {
 //        redisUtil.addAllSubmitBlog("allSubmitBlog", blogs);
 
         // 使用自己定义的redisutil
-        List<Blog> blogs = redisUtil.getAllSubmitBlog("allSubmitBlog");
+        List<Blog> blogs = redisUtil.getAllSubmitBlog("AllSubmitBlog");
         if(blogs.size() != 0)
             return blogs;
         else {
