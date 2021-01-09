@@ -47,12 +47,13 @@
                     <div class="four wide column m-mobile-hide">
                         <div class="ui left rail m-left-top m-mobile-hide m-margin-lr-none m-padded-lr" style="width: 96%">
                             <div class="ui sticky">
+                                <!--自动生成目录-->
                                 <div class="ui segments">
-                                    <div class="ui top attached segment">
+                                    <div class="ui secondary attached segment">
                                         <h4 class="ui header">
                                             <i class="ui file alternate icon"></i>
                                             <div class="content">
-                                                目录
+                                                文章目录
                                             </div>
                                         </h4>
                                     </div>
@@ -63,22 +64,25 @@
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="ui segments">
-                                    <div class="ui top attached segment">
-                                        <h4 class="ui header">
-                                            <i class="ui file alternate icon"></i>
-                                            <div class="content">
-                                                相关链接
-                                            </div>
-                                        </h4>
-                                    </div>
-                                    <div class="ui attached segment">
-                                        <div class="ui fluid vertical menu" th:if="${recommendBlogs}">
-                                            <a href="#" class="item" th:if="${recommendBlog.id!=blog.id}" th:href="@{/blog/{id}(id=${recommendBlog.id})}" target="_blank" th:each="recommendBlog : ${recommendBlogs}">
-                                                <span th:text="${recommendBlog.title}" class="m-text-inner">学习日志</span>
-                                            </a>
-                                        </div>
+                                <!--对应标签-->
+                                <div class="ui segments m-margin-top segmentTrans">
+<!--                                    <div class="ui secondary segment">-->
+<!--                                        <div class="ui two column grid">-->
+<!--                                            <div class="column">-->
+<!--                                                <h5 class="ui header">-->
+<!--                                                    <i class="tags large icon"></i>-->
+<!--                                                    <div class="content m-text-inner">-->
+<!--                                                        对应标签-->
+<!--                                                    </div>-->
+<!--                                                </h5>-->
+<!--                                            </div>-->
+<!--                                            <div class="right aligned column">-->
+<!--                                                <a href="#" th:href="@{/tags/-1}" target="_blank">更多 <i class="angle double right icon"></i></a>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                    <div class="ui segment segmentTrans m-padded-lr-tine m-padded-tb" style="text-align: justify;">
+                                        <a href="#" th:href="@{/tags/{id}(id=${tag.id})}" target="_blank" class="ui teal large label m-margin-tb-tine m-margin-lr-tiny m-padded-tb-small m-padded-lr m-text-index" th:each="tag : ${blog.tags}" th:text="${tag.name}">方法论</a>
                                     </div>
                                 </div>
 
@@ -493,11 +497,6 @@ h5,h6{font-size:1em;}
                                 <h5 id="appendix2">2、开源许可</h5>
 
 
-                            </div>
-
-                            <!--标签-->
-                            <div class="m-padded-lr-responsive m-margin-top-large">
-                                <a href="#" th:href="@{/tags/{id}(id=${tag.id})}" target="_blank" class="ui teal Large label" th:each="tag : ${blog.tags}" th:text="${tag.name}">方法论</a>
                             </div>
 
                             <!--赞赏-->
