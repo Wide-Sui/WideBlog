@@ -11,6 +11,14 @@ body {
     padding: 0;
 }
 
+.segmentTrans {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: 0px !important;
+    color: transparent !important;
+    border-radius: 0 !important;
+}
+
 #wholecontainer {
     width: 100%;
     min-height: 100%;
