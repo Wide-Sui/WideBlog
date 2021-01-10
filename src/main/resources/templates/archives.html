@@ -54,7 +54,7 @@
     </nav>
 
     <!--中间内容-->
-    <div class="m-container-small m-padded-tb-big">
+    <div class="m-container-small m-padded-tb-big" style="width: 100%">
         <div class="ui container">
             <!--header-->
             <div class="ui top segments segment">
@@ -75,8 +75,8 @@
                         <span class="m-text-inner">
                             <i class="teal angle double right icon"></i><span th:text="${blog.title}">关于刻意练习的清单</span>
                         </span>
-                        <div class="ui orange large label m-padded-tiny" th:text="${blog.flag}">原创</div>
-                        <div class="ui teal large label m-padded-tiny" th:text="${#dates.format(blog.updateTime,'MM月dd日')}">9月3日</div>
+                        <div class="ui orange large label m-padded-tiny m-mobile-hide" th:text="${blog.flag}">原创</div>
+                        <div class="ui teal large label m-padded-tiny m-mobile-hide" th:text="${#dates.format(blog.updateTime,'MM月dd日')}">9月3日</div>
                     </a>
                 </div>
             </th:block>
